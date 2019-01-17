@@ -6,7 +6,7 @@ set :public_folder, "static"
 set :views, "views"
 
 get '/' do
-    return 'Hello World IIIIIIIIII'
+    return 'Hello World'
 end
 
 get '/hello/' do
