@@ -33,3 +33,21 @@ end
 get '/hola' do
   erb :hola
 end
+
+get '/looky/:name' do
+  params.inspect
+end
+
+get '/passing/' do
+  @name = 'Ben'
+  erb :passing
+end
+
+get '/comment/' do
+  erb :comment
+end
+
+post '/comment/' do
+  @comment = params[:comment]
+  erb :comment_post
+end

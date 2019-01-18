@@ -1,0 +1,13 @@
+body {
+  background-color: #c9ddff;
+  font-family: Calibri;
+}
+
+#main_panel {
+  background-color: #f9f9c7;
+  border-radius: 10px;
+}
+
+#main_panel p {
+  font-size: 32px;
+}
