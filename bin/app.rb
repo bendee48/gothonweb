@@ -51,3 +51,20 @@ post '/comment/' do
   @comment = params[:comment]
   erb :comment_post
 end
+
+get '/names/' do
+  erb :names
+end
+
+def store_name(filename, string)
+  File.open('static/' + filename, 'a+') do |file|
+    file.puts(string)
+  end
+end
+
+post '/names/' do
+  @name = params[:name]
+  @file = 'names.txt'
+  store_name(@file, @name)
+  erb :names_thanks
+end
