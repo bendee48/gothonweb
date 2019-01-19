@@ -1,6 +1,10 @@
 body {
-  background-color: #c9ddff;
+  background-color: #f9ddff;
   font-family: Calibri;
+}
+
+#main_panel_body {
+  margin-top: 20px;
 }
 
 #main_panel {
@@ -8,6 +12,9 @@ body {
   border-radius: 10px;
 }
 
-#main_panel p {
-  font-size: 32px;
+.main_panel_body {
+  background-color: #f9f9c7;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 38px;
 }
