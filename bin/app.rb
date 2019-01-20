@@ -62,9 +62,15 @@ def store_name(filename, string)
   end
 end
 
+def read_names(filename)
+  return [] unless File.exist?("static/" + filename)
+  File.read("static/" + filename).split("\n")
+end
+
 post '/names/' do
   @name = params[:name]
-  @file = 'names.txt'
+  @file = "names.txt"
   store_name(@file, @name)
+  @name_list = read_names(@file)
   erb :names_thanks
 end
