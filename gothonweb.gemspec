@@ -14,6 +14,6 @@ Gem::Specification.new do |spec|
 
   spec.files         = ['lib/NAME.rb']
   spec.executables   = ['bin/NAME']
-  spec.test_files    = ['tests/test_NAME.rb']
+  spec.test_files    = ['tests/test_gothonweb.rb', 'map_tests.rb']
   spec.require_paths = ["lib"]
 end
