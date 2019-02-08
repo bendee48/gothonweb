@@ -1,4 +1,5 @@
 require "./bin/app.rb"
+require "./lib/gothonweb/map.rb"
 require "test/unit"
 require "rack/test"
 
@@ -11,19 +12,18 @@ class MyAppTest < Test::Unit::TestCase
 
   def test_my_default
     get '/'
-    assert_equal('Hello World', last_response.body)
+    session = {}
+    session[:room] = 'START'
+    assert_equal(session[:room], 'START')
+    #assert_equal('Hello World', last_response.body)
   end
 
-  def test_hello_form
-    get '/hello/'
-    assert(last_response.ok?)
-    assert(last_response.body.include?('A Greeting'))
-  end
-
-  def test_hello_form_post
-    post '/hello/', params={:name => "Bob", :greeting => "Hallo"}
+  def test_start_game
+    get '/game'
     assert last_response.ok?
-    assert last_response.body.include?("I just wanted to say")
+    p last_response.body
+    #assert last_response.ok?
+    #assert last_response.body.include?("Central Corridor")
   end
 
 end

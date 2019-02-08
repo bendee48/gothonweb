@@ -32,7 +32,8 @@ module Map
     "*" => THE_END_LOSER
     })
 
-  GENERIC_DEATH = Room.new("death", "You died.")
+  @@deaths = ["You suck at this.", "Oh dear.", "You're Mum must be so proud.", "Loser"]
+  GENERIC_DEATH = Room.new("death", "#{@@deaths[rand(0..3)]}. You died.")
 
   THE_BRIDGE.add_paths({
     "throw the bomb" => GENERIC_DEATH,
