@@ -21,7 +21,6 @@ class MyAppTest < Test::Unit::TestCase
   def test_start_game
     get '/game'
     assert last_response.ok?
-    p last_response.body
     #assert last_response.ok?
     #assert last_response.body.include?("Central Corridor")
   end

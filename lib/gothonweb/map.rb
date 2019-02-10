@@ -1,7 +1,9 @@
+require 'byebug'
+
 module Map
 
   class Room
-
+  
     def initialize(name, description)
       @name = name
       @description = description

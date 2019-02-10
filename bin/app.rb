@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/gothonweb/map.rb'
+require 'byebug'
 
 set :port, 8080
 set :static, true
