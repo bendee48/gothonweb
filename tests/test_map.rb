@@ -71,4 +71,5 @@ class TestMap < Test::Unit::TestCase
         assert_equal(room, Map::LASER_WEAPON_ARMORY)
     end
 
+
 end

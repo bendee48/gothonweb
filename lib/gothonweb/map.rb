@@ -3,7 +3,7 @@ require 'byebug'
 module Map
 
   class Room
-  
+
     def initialize(name, description)
       @name = name
       @description = description
@@ -22,7 +22,20 @@ module Map
 
   end
 
-  CENTRAL_CORRIDOR = Room.new("Central Corridor", "This is the central corrdior")
+  CENTRAL_CORRIDOR = Room.new("Central Corridor",
+    """
+    The Gothons of Planet Percal #25 have invaded your ship and destroyed
+    your entire crew.  You are the last surviving member and your last
+    mission is to get the neutron destruct bomb from the Weapons Armory,
+    put it in the bridge, and blow the ship up after getting into an
+    escape pod.
+
+    You're running down the central corridor to the Weapons Armory when
+    a Gothon jumps out, red scaly skin, dark grimy teeth, and evil clown costume
+    flowing around his hate filled body.  He's blocking the door to the
+    Armory and about to pull a weapon to blast you.
+    """
+  )
   LASER_WEAPON_ARMORY = Room.new("Laser Weapon Armory", "This is the laser weapon armory")
   THE_BRIDGE = Room.new("The Bridge", "This is the bridge")
   ESCAPE_POD = Room.new("Escape Pod", "This is the escape pod")
@@ -34,8 +47,9 @@ module Map
     "*" => THE_END_LOSER
     })
 
-  @@deaths = ["You suck at this.", "Oh dear.", "You're Mum must be so proud.", "Loser"]
-  GENERIC_DEATH = Room.new("death", "#{@@deaths[rand(0..3)]}. You died.")
+
+  GENERIC_DEATH = Room.new("death", "You died.")
+
 
   THE_BRIDGE.add_paths({
     "throw the bomb" => GENERIC_DEATH,
@@ -77,6 +91,13 @@ module Map
   def Map::save_room(session, room)
       # Store the room in the session for later, using its name
       session[:room] = ROOM_NAMES.key(room)
+  end
+
+  def Map::deaths
+    ["Ouch, that looked painful.",
+    "Man, you suck.",
+    "Better luck next time!"
+    ][rand(0..2)]
   end
 
 end

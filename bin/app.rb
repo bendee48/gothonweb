@@ -28,10 +28,10 @@ end
 post '/game' do
     room = Map::load_room(session)
     action = params[:action]
+    
 
     if room
         next_room = room.go(action) || room.go("*")
-
         if next_room
             Map::save_room(session, next_room)
         end
