@@ -71,5 +71,14 @@ class TestMap < Test::Unit::TestCase
         assert_equal(room, Map::LASER_WEAPON_ARMORY)
     end
 
+    def test_deaths
+      deaths = ["Ouch, that looked painful. :-(",
+      "Man, you suck.",
+      "Better luck next time!"
+      ]
+
+      assert(deaths.include?(Map::deaths))
+    end
+
 
 end

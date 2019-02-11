@@ -94,10 +94,11 @@ module Map
   end
 
   def Map::deaths
-    ["Ouch, that looked painful.",
+    ["Ouch, that looked painful. :-(",
     "Man, you suck.",
-    "Better luck next time!"
-    ][rand(0..2)]
+    "Better luck next time!",
+    "Keep the faith soldier and try again."
+  ][rand(0..2)]
   end
 
 end

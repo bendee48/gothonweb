@@ -16,6 +16,7 @@ end
 
 get '/game' do
     room = Map::load_room(session)
+    @death = Map::deaths
 
     if room
         erb :show_room, :locals => {:room => room}
@@ -28,7 +29,6 @@ end
 post '/game' do
     room = Map::load_room(session)
     action = params[:action]
-    
 
     if room
         next_room = room.go(action) || room.go("*")
@@ -40,4 +40,5 @@ post '/game' do
     else
         erb :you_died
     end
+    byebug
 end
